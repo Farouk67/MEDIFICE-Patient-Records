@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/margin_xlarge">
+
+    <!-- Animated Progress Indicator -->
+    <ProgressBar
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:indeterminateTint="@color/primary_blue"
+        android:layout_marginBottom="@dimen/margin_medium" />
+
+    <!-- Loading Text -->
+    <TextView
+        android:id="@+id/text_loading_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loading_patients"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/text_secondary"
+        android:gravity="center" />
+
+</LinearLayout>

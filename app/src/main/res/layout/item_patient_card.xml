@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/patient_card_margin"
+    app:cardCornerRadius="@dimen/card_radius"
+    app:cardElevation="@dimen/card_elevation_small"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/patient_card_padding">
+
+        <!-- Main Patient Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Profile Image with Status Indicator -->
+            <FrameLayout
+                android:layout_width="@dimen/patient_card_image_size"
+                android:layout_height="@dimen/patient_card_image_size"
+                android:layout_marginEnd="@dimen/margin_medium">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_patient_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_person_placeholder"
+                    app:civ_border_width="@dimen/profile_border_width"
+                    app:civ_border_color="@color/primary_blue_light" />
+
+                <!-- Status Indicator -->
+                <View
+                    android:id="@+id/status_indicator"
+                    android:layout_width="@dimen/status_indicator_size"
+                    android:layout_height="@dimen/status_indicator_size"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/status_active"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp" />
+
+            </FrameLayout>
+
+            <!-- Patient Info Column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- Name and Age Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/margin_tiny">
+
+                    <TextView
+                        android:id="@+id/text_patient_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Patient Name"
+                        android:textSize="@dimen/text_size_large"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        tools:text="Emily Davis" />
+
+                    <TextView
+                        android:id="@+id/text_patient_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="32 years"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_white"
+                        android:background="@drawable/age_badge"
+                        android:paddingHorizontal="@dimen/badge_padding"
+                        android:paddingVertical="4dp"
+                        android:layout_marginStart="@dimen/margin_small"
+                        tools:text="32 years" />
+
+                </LinearLayout>
+
+                <!-- Gender and Blood Type Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/margin_small">
+
+                    <ImageView
+                        android:id="@+id/icon_gender"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_person"
+                        app:tint="@color/text_secondary"
+                        android:layout_marginEnd="4dp" />
+
+                    <TextView
+                        android:id="@+id/text_patient_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginEnd="@dimen/margin_medium"
+                        tools:text="Female" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_blood_type"
+                        app:tint="@color/danger_red"
+                        android:layout_marginEnd="4dp" />
+
+                    <TextView
+                        android:id="@+id/text_blood_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AB+"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/danger_red"
+                        android:textStyle="bold"
+                        tools:text="AB+" />
+
+                </LinearLayout>
+
+                <!-- Phone Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_phone"
+                        app:tint="@color/text_secondary"
+                        android:layout_marginEnd="4dp" />
+
+                    <TextView
+                        android:id="@+id/text_patient_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="+1-555-0401"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary"
+                        tools:text="+1-555-0401" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Action Buttons Column -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/margin_small">
+
+                <!-- Call Button -->
+                <ImageButton
+                    android:id="@+id/button_call_patient"
+                    android:layout_width="@dimen/action_button_size"
+                    android:layout_height="@dimen/action_button_size"
+                    android:layout_marginBottom="@dimen/margin_tiny"
+                    android:src="@drawable/ic_phone"
+                    android:background="@drawable/round_button_green"
+                    android:contentDescription="Call Patient"
+                    app:tint="@color/text_white" />
+
+                <!-- More Options Button -->
+                <ImageButton
+                    android:id="@+id/button_more_options"
+                    android:layout_width="@dimen/action_button_size"
+                    android:layout_height="@dimen/action_button_size"
+                    android:src="@drawable/ic_more_vert"
+                    android:background="@drawable/round_button_gray"
+                    android:contentDescription="More Options"
+                    app:tint="@color/text_white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Medical Conditions Row -->
+        <LinearLayout
+            android:id="@+id/layout_medical_conditions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/chip_medical_conditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shellfish"
+                android:textSize="@dimen/chip_text_size"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/medical_condition_chip"
+                android:paddingHorizontal="@dimen/chip_padding_horizontal"
+                android:paddingVertical="@dimen/chip_padding_vertical"
+                android:layout_marginEnd="@dimen/margin_small"
+                tools:text="Shellfish Allergy" />
+
+            <TextView
+                android:id="@+id/chip_allergies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penicillin"
+                android:textSize="@dimen/chip_text_size"
+                android:textColor="@color/text_white"
+                android:background="@drawable/allergy_chip"
+                android:paddingHorizontal="@dimen/chip_padding_horizontal"
+                android:paddingVertical="@dimen/chip_padding_vertical"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:visibility="gone"
+                tools:text="Penicillin" />
+
+        </LinearLayout>
+
+        <!-- Registration Info Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin_small">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_schedule"
+                app:tint="@color/primary_blue"
+                android:layout_marginEnd="4dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Registered:"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/text_registration_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jul 25, 2025"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_secondary"
+                tools:text="Jul 25, 2025" />
+
+            <TextView
+                android:id="@+id/text_patient_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#004"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_hint"
+                android:layout_marginStart="@dimen/margin_small"
+                tools:text="#004" />
+
+        </LinearLayout>
+
+        <!-- Expandable Details Section -->
+        <LinearLayout
+            android:id="@+id/layout_expandable_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/surface_medium"
+                android:layout_marginBottom="@dimen/margin_medium" />
+
+            <!-- Quick Stats Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_medium">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/text_records_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:textSize="@dimen/text_size_large"
+                        android:textColor="@color/primary_blue"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Records"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/text_medications_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:textSize="@dimen/text_size_large"
+                        android:textColor="@color/warning_orange"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Medications"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/text_last_visit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2d ago"
+                        android:textSize="@dimen/text_size_large"
+                        android:textColor="@color/success_green"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last Visit"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Action Buttons Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_view_details"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:text="View Details"
+                    android:textColor="@color/primary_blue"
+                    app:strokeColor="@color/primary_blue"
+                    app:icon="@drawable/ic_visibility"
+                    app:iconTint="@color/primary_blue" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_add_record"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add Record"
+                    android:textColor="@color/text_white"
+                    app:backgroundTint="@color/primary_blue"
+                    app:icon="@drawable/ic_add"
+                    app:iconTint="@color/text_white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

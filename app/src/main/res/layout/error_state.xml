@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/margin_xlarge">
+
+    <!-- Error Icon -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚠️"
+        android:textSize="48sp"
+        android:layout_marginBottom="@dimen/margin_medium" />
+
+    <!-- Error Message -->
+    <TextView
+        android:id="@+id/text_error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Something went wrong"
+        android:textSize="@dimen/text_size_large"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/margin_small" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please try again or contact support if the problem persists."
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/text_secondary"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/margin_large" />
+
+    <!-- Retry Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_retry"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Try Again"
+        android:textColor="@color/primary_blue"
+        app:strokeColor="@color/primary_blue"
+        app:cornerRadius="@dimen/button_radius"
+        app:icon="@drawable/ic_refresh"
+        app:iconTint="@color/primary_blue" />
+
+</LinearLayout>

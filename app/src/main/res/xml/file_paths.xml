@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- External Files Path for Camera Images -->
+    <external-files-path
+        name="patient_camera_images"
+        path="Pictures" />
+
+    <!-- Internal Files Path for Processed Images -->
+    <files-path
+        name="patient_internal_images"
+        path="patient_images" />
+
+    <!-- Cache Path for Temporary Images -->
+    <cache-path
+        name="patient_temp_images"
+        path="temp_images" />
+</paths>

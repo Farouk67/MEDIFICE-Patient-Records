@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    tools:context=".activities.PatientDetailActivity">
+
+    <!-- App Bar Layout with gradient -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_background"
+        android:elevation="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:paddingTop="14dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleTextColor="@color/text_white"
+            app:subtitleTextColor="@color/text_white" />
+
+        <!-- Patient Header Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_large"
+                android:gravity="center_vertical">
+
+                <!-- Profile Image -->
+
+                <!-- Patient Basic Info -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_patient_profile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    app:civ_border_color="@color/primary_blue"
+                    app:civ_border_width="2dp"
+                    tools:src="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_patient_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Patient Name"
+                        android:textSize="@dimen/text_size_title"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"
+                        tools:text="John Anderson" />
+
+                    <TextView
+                        android:id="@+id/text_patient_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_tiny"
+                        android:text="35 years • Male"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textColor="@color/text_secondary"
+                        tools:text="35 years • Male" />
+
+                    <!-- Blood Type Badge -->
+                    <TextView
+                        android:id="@+id/text_blood_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="O+"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_white"
+                        android:textStyle="bold"
+                        android:background="@drawable/blood_type_badge"
+                        android:padding="@dimen/margin_small"
+                        tools:text="O+" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tab Layout -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:tabTextColor="@color/text_white"
+            app:tabSelectedTextColor="@color/text_white"
+            app:tabIndicatorColor="@color/text_white"
+            app:tabMode="fixed"
+            app:tabGravity="fill" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_medium">
+
+            <!-- Basic Info Tab Content -->
+            <LinearLayout
+                android:id="@+id/layout_basic_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <!-- Contact Information Card -->
+                <androidx.cardview.widget.CardView
+                    style="@style/HealthcareCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_medium">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="📞 Contact Information"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="@dimen/margin_medium" />
+
+                        <!-- Phone -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/margin_small">
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Phone:"
+                                android:textColor="@color/text_secondary"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/text_phone"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="+1-555-0101"
+                                android:textColor="@color/text_primary"
+                                tools:text="+1-555-0101" />
+
+                        </LinearLayout>
+
+                        <!-- Address -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/margin_small">
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Address:"
+                                android:textColor="@color/text_secondary"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/text_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="123 Main St, Springfield"
+                                android:textColor="@color/text_primary"
+                                tools:text="123 Main St, Springfield" />
+
+                        </LinearLayout>
+
+                        <!-- Registration Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Registered:"
+                                android:textColor="@color/text_secondary"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/text_registration_date"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Jan 15, 2025"
+                                android:textColor="@color/text_primary"
+                                tools:text="Jan 15, 2025" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Emergency Contact Card -->
+                <androidx.cardview.widget.CardView
+                    style="@style/HealthcareCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_medium">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🚨 Emergency Contact"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="@dimen/margin_medium" />
+
+                        <TextView
+                            android:id="@+id/text_emergency_contact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jane Anderson • +1-555-0102"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_size_medium"
+                            tools:text="Jane Anderson • +1-555-0102" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Medical Information Card -->
+                <androidx.cardview.widget.CardView
+                    style="@style/HealthcareCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_medium">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🩺 Medical Information"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="@dimen/margin_medium" />
+
+                        <!-- Medical Conditions -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/margin_small">
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Conditions:"
+                                android:textColor="@color/text_secondary"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/text_medical_conditions"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Hypertension"
+                                android:textColor="@color/text_primary"
+                                tools:text="Hypertension" />
+
+                        </LinearLayout>
+
+                        <!-- Allergies -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Allergies:"
+                                android:textColor="@color/text_secondary"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/text_allergies"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Penicillin"
+                                android:textColor="@color/danger_red"
+                                android:textStyle="bold"
+                                tools:text="Penicillin" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_medium">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_edit_patient"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/margin_small"
+                        android:text="Edit Patient"
+                        android:textColor="@color/text_white"
+                        app:backgroundTint="@color/primary_blue"
+                        app:cornerRadius="@dimen/button_radius"
+                        app:icon="@drawable/ic_edit"
+                        app:iconTint="@color/text_white" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_call_patient"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/margin_small"
+                        android:text="Call"
+                        android:textColor="@color/success_green"
+                        app:strokeColor="@color/success_green"
+                        app:cornerRadius="@dimen/button_radius"
+                        app:icon="@drawable/ic_call"
+                        app:iconTint="@color/success_green" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Medical Records Tab Content -->
+            <LinearLayout
+                android:id="@+id/layout_medical_records"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Add Medical Record Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_add_record"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:text="Add Medical Record"
+                    android:textColor="@color/text_white"
+                    app:backgroundTint="@color/success_green"
+                    app:cornerRadius="@dimen/button_radius"
+                    app:icon="@drawable/ic_add"
+                    app:iconTint="@color/text_white" />
+
+                <!-- Medical Records List -->
+                <androidx.cardview.widget.CardView
+                    style="@style/HealthcareCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="📋 Medical Records"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:padding="@dimen/margin_medium" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_medical_records"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:padding="@dimen/margin_small"
+                            tools:listitem="@layout/item_medical_record_compact"
+                            tools:itemCount="3" />
+
+                        <TextView
+                            android:id="@+id/text_no_medical_records"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No medical records found.\nTap 'Add Medical Record' to create the first record."
+                            android:textSize="@dimen/text_size_medium"
+                            android:textColor="@color/text_secondary"
+                            android:gravity="center"
+                            android:padding="@dimen/margin_xlarge"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- Medications Tab Content -->
+            <LinearLayout
+                android:id="@+id/layout_medications"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <!-- Add Medication Button -->
+                <Button
+                    android:id="@+id/button_add_medication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+ ADD MEDICATION"
+                    android:textColor="@android:color/white"
+                    android:background="@color/purple_500"
+                    android:padding="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:textStyle="bold" />
+
+                <!-- Current Medications Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@color/light_blue"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🔵 Current Medications"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/text_medications_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:background="@drawable/chip_background"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp" />
+
+                </LinearLayout>
+
+                <!-- Medications RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_medications"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clipToPadding="false"
+                    android:paddingBottom="8dp" />
+
+                <!-- No Medications Message -->
+                <TextView
+                    android:id="@+id/text_no_medications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No medications recorded for this patient.\n\nTap the ADD MEDICATION button above to add the patient's first medication."
+                    android:textSize="16sp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textAlignment="center"
+                    android:padding="32dp"
+                    android:visibility="visible"
+                    android:drawableTop="@drawable/ic_medication"
+                    android:drawablePadding="16dp" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

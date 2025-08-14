@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    tools:context=".activities.MedicalRecordActivity">
+
+    <!-- App Bar Layout with gradient -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_background"
+        android:elevation="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleTextColor="@color/text_white"
+            app:subtitleTextColor="@color/text_white" />
+
+        <!-- Patient Info Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_medium"
+            android:paddingTop="0dp">
+
+            <TextView
+                android:id="@+id/text_patient_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Patient Name"
+                android:textSize="@dimen/text_size_title"
+                android:textColor="@color/text_white"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                tools:text="John Anderson" />
+
+            <TextView
+                android:id="@+id/text_patient_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:text="35 years • Male • O+"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_white"
+                android:alpha="0.9"
+                tools:text="35 years • Male • O+" />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_medium">
+
+            <!-- Medical Record Form Card -->
+            <androidx.cardview.widget.CardView
+                style="@style/HealthcareCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🩺 Medical Record Form"
+                        android:textSize="@dimen/text_size_large"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/margin_medium" />
+
+                    <!-- Visit Date Section -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/margin_medium">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📅 Visit Date"
+                                android:textColor="@color/text_secondary"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="@dimen/margin_tiny" />
+
+                            <TextView
+                                android:id="@+id/text_visit_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Today"
+                                android:textSize="@dimen/text_size_medium"
+                                android:textColor="@color/text_primary"
+                                android:background="@drawable/date_background"
+                                android:padding="@dimen/margin_small"
+                                tools:text="Jan 25, 2025" />
+
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button_select_date"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:text="Change"
+                            android:textColor="@color/primary_blue"
+                            app:strokeColor="@color/primary_blue"
+                            app:cornerRadius="@dimen/button_radius" />
+
+                    </LinearLayout>
+
+                    <!-- Visit Type -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏥 Visit Type"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/margin_tiny" />
+
+                    <Spinner
+                        android:id="@+id/spinner_visit_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:background="@drawable/spinner_background"
+                        android:padding="@dimen/margin_medium" />
+
+                    <!-- Symptoms -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_symptoms"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:hint="🤒 Symptoms *"
+                        app:startIconDrawable="@drawable/ic_symptoms"
+                        app:startIconTint="@color/primary_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_symptoms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:maxLines="3"
+                            android:minLines="2" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Diagnosis -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_diagnosis"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:hint="🔬 Diagnosis *"
+                        app:startIconDrawable="@drawable/ic_diagnosis"
+                        app:startIconTint="@color/primary_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_diagnosis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:maxLines="3" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Treatment -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_treatment"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:hint="💉 Treatment *"
+                        app:startIconDrawable="@drawable/ic_treatment"
+                        app:startIconTint="@color/primary_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_treatment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:maxLines="4" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Doctor Information Section -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="👨‍⚕️ Doctor Information"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:layout_marginBottom="@dimen/margin_small" />
+
+                    <!-- Doctor Name -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_doctor_name"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:hint="Doctor Name *"
+                        app:startIconDrawable="@drawable/ic_doctor"
+                        app:startIconTint="@color/primary_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_doctor_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName|textCapWords" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Doctor Specialty -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🩺 Doctor Specialty"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="@dimen/margin_tiny" />
+
+                    <Spinner
+                        android:id="@+id/spinner_doctor_specialty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:background="@drawable/spinner_background"
+                        android:padding="@dimen/margin_medium" />
+
+                    <!-- Vital Signs -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_vital_signs"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:hint="❤️ Vital Signs (e.g., BP: 120/80, Temp: 98.6°F)"
+                        app:startIconDrawable="@drawable/ic_vital_signs"
+                        app:startIconTint="@color/primary_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_vital_signs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Follow-up Date Section -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/margin_medium">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📅 Follow-up Date"
+                                android:textColor="@color/text_secondary"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="@dimen/margin_tiny" />
+
+                            <TextView
+                                android:id="@+id/text_follow_up_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="No follow-up scheduled"
+                                android:textSize="@dimen/text_size_medium"
+                                android:textColor="@color/text_secondary"
+                                android:background="@drawable/date_background"
+                                android:padding="@dimen/margin_small"
+                                tools:text="Feb 15, 2025" />
+
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button_select_follow_up_date"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:text="Set Date"
+                            android:textColor="@color/primary_blue"
+                            app:strokeColor="@color/primary_blue"
+                            app:cornerRadius="@dimen/button_radius" />
+
+                    </LinearLayout>
+
+                    <!-- Notes -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_notes"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_large"
+                        android:hint="📝 Additional Notes"
+                        app:startIconDrawable="@drawable/ic_notes"
+                        app:startIconTint="@color/primary_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_notes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:maxLines="4"
+                            android:minLines="2" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Action Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button_save_record"
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="@dimen/margin_small"
+                            android:text="Save Record"
+                            android:textColor="@color/text_white"
+                            app:backgroundTint="@color/success_green"
+                            app:cornerRadius="@dimen/button_radius"
+                            app:icon="@drawable/ic_save"
+                            app:iconTint="@color/text_white" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/button_clear_form"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:text="Clear Form"
+                            android:textColor="@color/text_secondary"
+                            app:strokeColor="@color/text_secondary"
+                            app:cornerRadius="@dimen/button_radius"
+                            app:icon="@drawable/ic_clear"
+                            app:iconTint="@color/text_secondary" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Previous Medical Records Section -->
+            <androidx.cardview.widget.CardView
+                style="@style/HealthcareCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📋 Previous Medical Records"
+                        android:textSize="@dimen/text_size_large"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:padding="@dimen/margin_medium" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_medical_records"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:padding="@dimen/margin_small"
+                        tools:listitem="@layout/item_medical_record_compact"
+                        tools:itemCount="2" />
+
+                    <TextView
+                        android:id="@+id/text_no_records"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No previous medical records found.\nThis will be the first record for this patient."
+                        android:textSize="@dimen/text_size_medium"
+                        android:textColor="@color/text_secondary"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_xlarge"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

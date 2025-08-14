@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small"
+    app:cardCornerRadius="@dimen/card_radius"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/card_background"
+    android:foreground="@drawable/ripple_effect"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_medium">
+
+        <!-- Header with Date and Visit Type -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/text_visit_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Jan 15, 2025"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                tools:text="Jan 15, 2025" />
+
+            <TextView
+                android:id="@+id/text_visit_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regular"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_white"
+                android:textStyle="bold"
+                android:background="@drawable/visit_type_badge"
+                android:padding="@dimen/margin_small"
+                tools:text="Regular" />
+
+        </LinearLayout>
+
+        <!-- Diagnosis -->
+        <TextView
+            android:id="@+id/text_diagnosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Migraine"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/margin_tiny"
+            tools:text="Migraine" />
+
+        <!-- Symptoms -->
+        <TextView
+            android:id="@+id/text_symptoms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Headache, nausea"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="Headache, nausea" />
+
+        <!-- Doctor Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👨‍⚕️"
+                android:textSize="16sp"
+                android:layout_marginEnd="@dimen/margin_small" />
+
+            <TextView
+                android:id="@+id/text_doctor_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dr. Jennifer Martinez - Neurology"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/primary_blue"
+                android:textStyle="bold"
+                tools:text="Dr. Jennifer Martinez - Neurology" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

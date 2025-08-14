@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Only show PDF export icon in toolbar - most important action -->
+    <item
+        android:id="@+id/action_export_pdf"
+        android:title="Export to PDF"
+        android:icon="@android:drawable/ic_menu_save"
+        app:showAsAction="ifRoom" />
+
+    <!-- Move Edit to overflow menu to prevent overcrowding -->
+    <item
+        android:id="@+id/menu_edit_patient"
+        android:title="Edit Patient"
+        android:icon="@android:drawable/ic_menu_edit"
+        app:showAsAction="never" />
+
+    <!-- Keep Share in overflow menu -->
+    <item
+        android:id="@+id/menu_share_info"
+        android:title="Share Info"
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="never" />
+
+    <!-- Keep Delete in overflow menu -->
+    <item
+        android:id="@+id/menu_delete_patient"
+        android:title="Delete Patient"
+        android:icon="@android:drawable/ic_menu_delete"
+        app:showAsAction="never" />
+
+</menu>

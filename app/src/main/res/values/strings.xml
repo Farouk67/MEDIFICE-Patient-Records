@@ -1,0 +1,212 @@
+<resources>
+    <string name="app_name">MEDIFICE</string>
+    <string name="app_tagline">Professional Patient Management</string>
+
+    <!-- Enhanced Navigation -->
+    <string name="nav_dashboard_subtitle">Overview &amp; Quick Actions</string>
+    <string name="nav_patients_subtitle">Patient Management</string>
+    <string name="nav_records_subtitle">Medical Records</string>
+
+    <!-- Professional Messages -->
+    <string name="welcome_doctor">Welcome back, Doctor</string>
+    <string name="dashboard_subtitle">How can we help you today?</string>
+    <string name="empty_patients_message">No patients yet.\nStart by adding your first patient!</string>
+    <string name="empty_records_message">No medical records found.\nTap the + button to add the first record.</string>
+
+    <!-- Success Messages (Professional) -->
+    <string name="success_patient_saved">Patient information saved successfully</string>
+    <string name="success_record_saved">Medical record saved successfully</string>
+    <string name="success_data_updated">Information updated successfully</string>
+
+    <!-- Error Messages (User-friendly) -->
+    <string name="error_connection">Unable to connect. Please try again.</string>
+    <string name="error_invalid_data">Please check your information and try again.</string>
+    <string name="error_required_fields">Please fill in all required fields.</string>
+
+    <!-- Feature Status Messages -->
+    <string name="feature_coming_soon">This feature is coming soon!</string>
+    <string name="feature_under_development">Under development - stay tuned!</string>
+
+    <!-- Action Confirmations -->
+    <string name="confirm_delete_patient">Are you sure you want to remove this patient?\n\nThis action cannot be undone.</string>
+    <string name="confirm_delete_record">Delete this medical record permanently?</string>
+
+    <!-- Loading States -->
+    <string name="loading_patients">Loading patients...</string>
+    <string name="loading_records">Loading medical records...</string>
+    <string name="saving_data">Saving...</string>
+    <string name="updating_data">Updating...</string>
+
+    <!-- Patient Card Additional Strings -->
+    <string name="expand_card">Expand card</string>
+    <string name="collapse_card">Collapse card</string>
+    <string name="patient_active">Active Patient</string>
+    <string name="patient_inactive">Inactive Patient</string>
+    <string name="medical_conditions">Medical Conditions</string>
+    <string name="allergies">Allergies</string>
+    <string name="quick_stats">Quick Stats</string>
+    <string name="emergency_contact">Emergency Contact</string>
+
+    <!-- Filter and Search -->
+    <string name="filter_all">All</string>
+    <string name="filter_male">Male</string>
+    <string name="filter_female">Female</string>
+    <string name="filter_recent">Recent</string>
+    <string name="search_hint">Search patients by name, phone, or blood type...</string>
+
+    <!-- Empty States -->
+    <string name="no_patients_found">No patients found</string>
+    <string name="no_patients_for_filter">No %s patients found</string>
+    <string name="no_search_results">No patients found for \"%s\"</string>
+    <string name="add_first_patient_message">No patients found.\nTap the + button to add your first patient!</string>
+
+    <!-- Actions -->
+    <string name="export_patients">Export Patients</string>
+    <string name="view_statistics">View Statistics</string>
+    <string name="patient_statistics">Patient Statistics</string>
+    <string name="total_patients">Total Patients</string>
+    <string name="male_patients">Male</string>
+    <string name="female_patients">Female</string>
+    <string name="other_gender">Other</string>
+
+    <!-- Add/Edit Patient Activity -->
+    <string name="title_add_patient">Add New Patient</string>
+    <string name="title_edit_patient">Edit Patient</string>
+    <string name="action_add_patient">Add Patient</string>
+
+    <!-- Form Fields -->
+    <string name="hint_patient_name">Full Name *</string>
+    <string name="hint_age">Age *</string>
+    <string name="hint_phone">Phone Number</string>
+    <string name="hint_address">Home Address</string>
+    <string name="hint_emergency_contact">Emergency Contact Name</string>
+    <string name="hint_emergency_phone">Emergency Contact Phone</string>
+    <string name="hint_medical_conditions">Other Medical Conditions</string>
+    <string name="hint_allergies">Known Allergies</string>
+
+    <!-- Section Headers -->
+    <string name="section_profile_photo">📷 Profile Photo</string>
+    <string name="section_personal_info">👤 Personal Information</string>
+    <string name="section_contact_info">📞 Contact Information</string>
+    <string name="section_emergency_contact">🚨 Emergency Contact</string>
+    <string name="section_medical_info">🩺 Medical Information</string>
+    <string name="section_registration">📅 Registration Details</string>
+
+    <!-- Labels -->
+    <string name="label_gender">Gender *</string>
+    <string name="label_blood_type">Blood Type</string>
+    <string name="label_medical_conditions">Medical Conditions</string>
+    <string name="label_registration_date">Registration Date</string>
+
+    <!-- Gender Options -->
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="gender_other">Other</string>
+
+    <!-- Medical Conditions -->
+    <string name="condition_hypertension">Hypertension</string>
+    <string name="condition_diabetes">Diabetes</string>
+    <string name="condition_asthma">Asthma</string>
+    <string name="condition_heart_disease">Heart Disease</string>
+
+    <!-- Buttons -->
+    <string name="button_select_photo">Select Photo</string>
+    <string name="button_change_date">Change Date</string>
+    <string name="button_save_patient">Save Patient</string>
+    <string name="button_update_patient">Update Patient</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_clear_form">Clear Form</string>
+
+    <!-- Photo Selection -->
+    <string name="photo_selection_title">Select Profile Image</string>
+    <string name="photo_take_photo">Take Photo</string>
+    <string name="photo_choose_gallery">Choose from Gallery</string>
+    <string name="photo_remove_photo">Remove Photo</string>
+
+    <!-- Validation Messages -->
+    <string name="error_name_required">Patient name is required</string>
+    <string name="error_name_too_short">Name must be at least %d characters</string>
+    <string name="error_name_too_long">Name must be less than %d characters</string>
+    <string name="error_age_required">Age is required</string>
+    <string name="error_age_invalid">Please enter a valid age</string>
+    <string name="error_age_range">Age must be between %d and %d</string>
+    <string name="error_phone_too_long">Phone number is too long</string>
+    <string name="error_address_too_long">Address is too long</string>
+    <string name="error_emergency_phone_too_long">Emergency phone number is too long</string>
+
+    <!-- Confirmation Dialogs -->
+    <string name="dialog_clear_form_title">Clear Form</string>
+    <string name="dialog_clear_form_message">Are you sure you want to clear all entered data?</string>
+    <string name="dialog_unsaved_changes_title">Unsaved Changes</string>
+    <string name="dialog_unsaved_changes_message">You have unsaved changes. Are you sure you want to leave?</string>
+    <string name="button_clear">Clear</string>
+    <string name="button_leave">Leave</string>
+    <string name="button_stay">Stay</string>
+
+    <!-- Success Messages -->
+    <string name="message_form_cleared">Form cleared</string>
+    <string name="message_saving">Saving…</string>
+    <string name="message_updating">Updating…</string>
+
+    <!-- Camera and Gallery -->
+    <string name="error_camera_not_available">Camera not available</string>
+    <string name="error_gallery_not_available">Gallery not available</string>
+
+    <!-- Accessibility -->
+    <string name="content_description_profile_image">Patient profile image</string>
+    <string name="content_description_select_image">Select profile image</string>
+    <string name="content_description_change_date">Change registration date</string>
+    <string name="content_description_gender_male">Male gender option</string>
+    <string name="content_description_gender_female">Female gender option</string>
+    <string name="content_description_gender_other">Other gender option</string>
+
+
+
+    <!-- Form Placeholders -->
+    <string name="placeholder_patient_name">e.g., John Anderson</string>
+    <string name="placeholder_age">e.g., 35</string>
+    <string name="placeholder_phone">e.g., +1-555-0123</string>
+    <string name="placeholder_address">e.g., 123 Main St, Springfield</string>
+    <string name="placeholder_emergency_contact">e.g., Jane Anderson</string>
+    <string name="placeholder_emergency_phone">e.g., +1-555-0124</string>
+    <string name="placeholder_allergies">e.g., Penicillin, Latex</string>
+    <string name="placeholder_other_conditions">e.g., Chronic migraines</string>
+
+    <!-- Help Text -->
+    <string name="help_required_fields">Fields marked with * are required</string>
+    <string name="help_medical_conditions">Select all conditions that apply to this patient</string>
+    <string name="help_emergency_contact">Person to contact in case of emergency</string>
+    <string name="help_profile_photo">Tap to add or change patient\'s profile photo</string>
+
+    <!-- Menu Items -->
+    <string name="menu_save">Save</string>
+    <string name="menu_clear">Clear Form</string>
+
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Action Strings -->
+    <string name="action_search">Search</string>
+    <string name="action_notifications">Notifications</string>
+    <string name="action_backup">Backup</string>
+
+    <!-- Menu Items -->
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_patients">Patients</string>
+    <string name="menu_patient_list">All Patients</string>
+    <string name="menu_add_patient">Add New Patient</string>
+    <string name="menu_medical_records">Medical Records</string>
+    <string name="menu_medications">Medications</string>
+    <string name="menu_reports">Reports &amp; Analytics</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_about">About</string>
+
+    <!-- Progress Messages -->
+    <string name="progress_saving_patient">Saving patient information…</string>
+    <string name="progress_updating_patient">Updating patient information…</string>
+    <string name="progress_loading_patient">Loading patient information…</string>
+
+    <!-- Statistics Template -->
+    <string name="statistics_template">📊 Patient Statistics\n\nTotal Patients: %1$d\n👨 Male: %2$d\n👩 Female: %3$d\n⚧ Other: %4$d</string>
+</resources>

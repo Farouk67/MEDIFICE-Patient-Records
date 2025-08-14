@@ -1,0 +1,24 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow -->
+    <item android:top="1dp" android:right="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#10000000" />
+            <corners
+                android:topLeftRadius="16dp"
+                android:topRightRadius="4dp"
+                android:bottomLeftRadius="16dp"
+                android:bottomRightRadius="16dp" />
+        </shape>
+    </item>
+    <!-- Main bubble -->
+    <item android:bottom="1dp" android:left="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/chat_sent" />
+            <corners
+                android:topLeftRadius="16dp"
+                android:topRightRadius="4dp"
+                android:bottomLeftRadius="16dp"
+                android:bottomRightRadius="16dp" />
+        </shape>
+    </item>
+</layer-list>

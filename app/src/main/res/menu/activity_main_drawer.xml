@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- Main sections -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_dashboard"
+            android:title="Dashboard" />
+
+        <item
+            android:id="@+id/nav_patients"
+            android:icon="@drawable/ic_patients"
+            android:title="Patients Overview" />
+    </group>
+
+    <!-- Patient Management -->
+    <item android:title="Patient Management">
+        <menu>
+            <item
+                android:id="@+id/nav_patient_list"
+                android:icon="@drawable/ic_list"
+                android:title="All Patients" />
+
+            <item
+                android:id="@+id/nav_add_patient"
+                android:icon="@drawable/ic_person_add"
+                android:title="Add New Patient" />
+        </menu>
+    </item>
+
+    <!-- Medical Records -->
+    <item android:title="Medical Records">
+        <menu>
+            <item
+                android:id="@+id/nav_medical_records"
+                android:icon="@drawable/ic_medical_record"
+                android:title="Medical Records" />
+
+            <item
+                android:id="@+id/nav_medications"
+                android:icon="@drawable/ic_medication"
+                android:title="Medications" />
+        </menu>
+    </item>
+
+    <!-- Analytics and Settings -->
+    <item android:title="More">
+        <menu>
+            <item
+                android:id="@+id/nav_reports"
+                android:icon="@drawable/ic_analytics"
+                android:title="Reports &amp; Analytics" />
+
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="Settings" />
+
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_info"
+                android:title="About" />
+        </menu>
+    </item>
+
+</menu>

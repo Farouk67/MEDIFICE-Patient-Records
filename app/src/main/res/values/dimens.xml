@@ -1,0 +1,161 @@
+<resources>
+    <!-- ... header dimensions ... -->
+
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text_size_header">24sp</dimen>
+
+    <!-- Card Dimensions -->
+
+    <dimen name="card_elevation_medium">4dp</dimen>
+    <dimen name="card_elevation_large">8dp</dimen>
+
+    <!-- FAB Dimensions -->
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="fab_pressed_elevation">12dp</dimen>
+
+    <!-- Patient Card Specific Dimensions -->
+    <dimen name="patient_card_margin">8dp</dimen>
+    <dimen name="patient_card_padding">16dp</dimen>
+    <dimen name="profile_border_width">2dp</dimen>
+    <dimen name="chip_padding_horizontal">12dp</dimen>
+    <dimen name="chip_padding_vertical">6dp</dimen>
+    <dimen name="chip_text_size">11sp</dimen>
+    <dimen name="badge_padding">8dp</dimen>
+    <dimen name="action_button_size">40dp</dimen>
+    <dimen name="status_indicator_size">16dp</dimen>
+
+    <!-- Search and Filter -->
+    <dimen name="search_bar_height">48dp</dimen>
+    <dimen name="search_bar_radius">24dp</dimen>
+    <dimen name="chip_spacing">8dp</dimen>
+
+    <!-- Form Specific Dimensions -->
+    <dimen name="form_section_spacing">24dp</dimen>
+    <dimen name="form_field_spacing">16dp</dimen>
+    <dimen name="form_padding">20dp</dimen>
+    <dimen name="profile_image_size">120dp</dimen>
+    <dimen name="profile_image_border">3dp</dimen>
+    <dimen name="section_header_margin">20dp</dimen>
+    <dimen name="input_field_height">56dp</dimen>
+    <dimen name="checkbox_spacing">12dp</dimen>
+    <dimen name="radio_button_spacing">8dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="form_bottom_margin">80dp</dimen>
+
+    <!-- Empty State */ -->
+    <dimen name="empty_state_icon_size">64dp</dimen>
+    <dimen name="empty_state_padding">32dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_tiny">12sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_display">28sp</dimen>
+
+    <!-- Margins and Padding -->
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+
+    <!-- Card and Layout Dimensions -->
+    <dimen name="card_radius">16dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="card_elevation_small">4dp</dimen>
+    <dimen name="button_radius">8dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Profile Images -->
+    <dimen name="profile_image_small">32dp</dimen>
+    <dimen name="profile_image_medium">48dp</dimen>
+    <dimen name="profile_image_large">64dp</dimen>
+    <dimen name="profile_image_xlarge">120dp</dimen>
+
+
+
+    <!-- Input Field Dimensions -->
+    <dimen name="input_height">48dp</dimen>
+    <dimen name="input_height_large">56dp</dimen>
+    <dimen name="input_margin">8dp</dimen>
+
+    <!-- Navigation and Toolbar -->
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+
+    <!-- List Item Dimensions -->
+    <dimen name="list_item_height">72dp</dimen>
+    <dimen name="list_item_avatar_size">40dp</dimen>
+    <dimen name="list_item_padding">16dp</dimen>
+
+    <!-- Button Dimensions -->
+
+    <dimen name="button_height_large">56dp</dimen>
+    <dimen name="button_padding_horizontal">24dp</dimen>
+    <dimen name="button_padding_vertical">12dp</dimen>
+
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_small">16dp</dimen>
+    <dimen name="icon_size_medium">24dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+    <dimen name="icon_size_xlarge">48dp</dimen>
+
+    <!-- Badge and Chip Dimensions -->
+    <dimen name="badge_size">16dp</dimen>
+    <dimen name="badge_text_size">10sp</dimen>
+    <dimen name="chip_height">32dp</dimen>
+    <dimen name="chip_padding">8dp</dimen>
+
+    <!-- Status Indicators -->
+
+    <dimen name="status_indicator_margin">4dp</dimen>
+
+    <!-- Dashboard Specific -->
+    <dimen name="dashboard_card_height">120dp</dimen>
+    <dimen name="dashboard_icon_size">40dp</dimen>
+    <dimen name="dashboard_spacing">16dp</dimen>
+
+    <!-- Patient Card Specific -->
+    <dimen name="patient_card_image_size">64dp</dimen>
+
+    <!-- Medical Information */ -->
+    <dimen name="medical_chip_height">28dp</dimen>
+    <dimen name="medical_chip_padding">6dp</dimen>
+    <dimen name="vital_signs_spacing">8dp</dimen>
+
+    <!-- Animation Values */ -->
+    <dimen name="animation_offset">100dp</dimen>
+    <dimen name="elevation_pressed">12dp</dimen>
+
+    <!-- Search and Filter -->
+
+    <dimen name="filter_chip_spacing">8dp</dimen>
+
+    <!-- Emergency and Priority */ -->
+    <dimen name="emergency_banner_height">64dp</dimen>
+    <dimen name="priority_indicator_size">8dp</dimen>
+
+    <!-- Dividers and Separators -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="section_divider_height">8dp</dimen>
+
+    <!-- Bottom Sheet and Dialog */ -->
+    <dimen name="bottom_sheet_peek_height">200dp</dimen>
+    <dimen name="dialog_corner_radius">12dp</dimen>
+
+    <!-- Loading and Progress -->
+    <dimen name="progress_size">48dp</dimen>
+    <dimen name="progress_stroke_width">4dp</dimen>
+
+    <!-- Grid and Layout */ -->
+    <dimen name="grid_spacing">8dp</dimen>
+    <dimen name="grid_item_height">180dp</dimen>
+
+    <!-- Responsive Design Breakpoints -->
+    <dimen name="content_max_width">600dp</dimen>
+    <dimen name="sidebar_width">320dp</dimen>
+</resources>

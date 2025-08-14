@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small"
+    app:cardCornerRadius="@dimen/card_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardBackgroundColor="@color/card_background"
+    android:foreground="@drawable/ripple_effect"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_medium">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+            <!-- Date and Visit Type -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_visit_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jan 15, 2025"
+                    android:textSize="@dimen/text_size_large"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"
+                    tools:text="Jan 15, 2025" />
+
+                <TextView
+                    android:id="@+id/text_visit_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_tiny"
+                    android:text="Regular Visit"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/text_white"
+                    android:textStyle="bold"
+                    android:background="@drawable/visit_type_badge"
+                    android:padding="@dimen/margin_small"
+                    tools:text="Regular Visit" />
+
+            </LinearLayout>
+
+            <!-- Patient Name (if needed) -->
+            <TextView
+                android:id="@+id/text_patient_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Anderson"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_secondary"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="John Anderson" />
+
+        </LinearLayout>
+
+        <!-- Main Content Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+            <!-- Diagnosis -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_small">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔬"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="@dimen/margin_small" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diagnosis"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_diagnosis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Migraine"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        tools:text="Migraine" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Symptoms -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_small">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🤒"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="@dimen/margin_small" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Symptoms"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_symptoms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Headache, nausea"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textColor="@color/text_primary"
+                        tools:text="Headache, nausea, sensitivity to light" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Treatment -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_small">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💉"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="@dimen/margin_small" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Treatment"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_treatment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Prescribed pain medication and rest"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textColor="@color/text_primary"
+                        tools:text="Prescribed pain medication and rest" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Additional Details Section -->
+        <LinearLayout
+            android:id="@+id/layout_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/surface_light"
+            android:padding="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:visibility="gone">
+
+            <!-- Notes -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_small">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📝"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="@dimen/margin_small" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Notes"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Patient responded well to treatment"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_primary"
+                        tools:text="Patient responded well to treatment" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Vital Signs -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="❤️"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="@dimen/margin_small" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vital Signs"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_vital_signs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BP: 120/80, Temp: 98.6°F, Pulse: 72"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/text_primary"
+                        tools:text="BP: 120/80, Temp: 98.6°F, Pulse: 72" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Doctor and Follow-up Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Doctor Information -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/margin_small">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="👨‍⚕️"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="@dimen/margin_small" />
+
+                <TextView
+                    android:id="@+id/text_doctor_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dr. Jennifer Martinez - Neurology"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/primary_blue"
+                    android:textStyle="bold"
+                    tools:text="Dr. Jennifer Martinez - Neurology" />
+
+            </LinearLayout>
+
+            <!-- Follow-up Date -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📅"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="@dimen/margin_small" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Follow-up: "
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/text_secondary" />
+
+                <TextView
+                    android:id="@+id/text_follow_up_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Feb 15, 2025"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/warning_orange"
+                    android:textStyle="bold"
+                    tools:text="Feb 15, 2025" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

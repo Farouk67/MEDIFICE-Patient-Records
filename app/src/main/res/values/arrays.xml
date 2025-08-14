@@ -1,0 +1,78 @@
+<resources>
+
+    <string-array name="doctor_specialties">
+        <item>Select Specialty</item>
+        <item>General Practice</item>
+        <item>Internal Medicine</item>
+        <item>Cardiology</item>
+        <item>Dermatology</item>
+        <item>Emergency Medicine</item>
+        <item>Family Medicine</item>
+        <item>Gastroenterology</item>
+        <item>Neurology</item>
+        <item>Oncology</item>
+        <item>Orthopedics</item>
+        <item>Pediatrics</item>
+        <item>Psychiatry</item>
+        <item>Pulmonology</item>
+        <item>Radiology</item>
+        <item>Surgery</item>
+        <item>Urology</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Visit Types Array -->
+    <string-array name="visit_types">
+        <item>Select Visit Type</item>
+        <item>Regular Check-up</item>
+        <item>Emergency Visit</item>
+        <item>Follow-up</item>
+        <item>Consultation</item>
+        <item>Procedure</item>
+        <item>Lab Results</item>
+        <item>Vaccination</item>
+        <item>Physical Examination</item>
+        <item>Specialist Referral</item>
+        <item>Therapy Session</item>
+        <item>Other</item>
+    </string-array>
+
+
+     <!-- Medical Conditions Array -->
+    <string-array name="medical_conditions">
+        <item>Hypertension</item>
+        <item>Diabetes Type 1</item>
+        <item>Diabetes Type 2</item>
+        <item>Asthma</item>
+        <item>Heart Disease</item>
+        <item>Arthritis</item>
+        <item>Depression</item>
+        <item>Anxiety</item>
+        <item>Obesity</item>
+        <item>High Cholesterol</item>
+        <item>Chronic Pain</item>
+        <item>Allergies</item>
+    </string-array>
+
+    <!-- Gender Array -->
+    <string-array name="gender_options">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+        <item>Prefer not to say</item>
+    </string-array>
+
+    <!-- Blood Types Array (if not already created) -->
+    <string-array name="blood_types">
+        <item>Select Blood Type</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+</resources>

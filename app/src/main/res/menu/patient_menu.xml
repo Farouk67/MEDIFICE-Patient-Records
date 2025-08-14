@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_edit_patient"
+        android:title="Edit Patient"
+        android:icon="@drawable/ic_edit" />
+
+    <item
+        android:id="@+id/menu_delete_patient"
+        android:title="Delete Patient"
+        android:icon="@drawable/ic_delete" />
+
+    <item
+        android:id="@+id/menu_call_patient"
+        android:title="Call Patient"
+        android:icon="@drawable/ic_phone" />
+
+    <item
+        android:id="@+id/menu_share_patient"
+        android:title="Share Patient Info"
+        android:icon="@drawable/ic_share" />
+
+    <item
+        android:id="@+id/menu_add_medical_record"
+        android:title="Add Medical Record"
+        android:icon="@drawable/ic_medical_record" />
+
+</menu>

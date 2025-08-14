@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main">
+
+    <!-- Main Content with SwipeRefreshLayout -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Header Section with Gradient Background -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium">
+
+                    <!-- Title and Count -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/margin_medium">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="👥 Patients"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_size_header"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-medium" />
+
+                        <TextView
+                            android:id="@+id/text_patients_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 patients"
+                            android:textColor="@color/text_white"
+                            android:textSize="@dimen/text_size_medium"
+                            android:background="@drawable/count_badge"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            android:paddingVertical="4dp"
+                            tools:text="12 patients" />
+
+                    </LinearLayout>
+
+                    <!-- Search View -->
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/search_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:background="@drawable/search_background"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@android:color/transparent"
+                        app:queryHint="Search patients by name, phone, or blood type..."
+                        app:searchIcon="@drawable/ic_search"
+                        app:closeIcon="@drawable/ic_close" />
+
+                    <!-- Filter Chips -->
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_filters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_small"
+                        app:singleSelection="true"
+                        app:selectionRequired="true">
+
+                        <!-- Chips will be added programmatically -->
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+                <!-- Patients List Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium">
+
+                    <!-- Progress Bar -->
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/margin_xlarge"
+                        android:indeterminateTint="@color/primary_blue"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <!-- Patients RecyclerView -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_patients"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:clipToPadding="false"
+                        android:paddingBottom="80dp"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/item_patient_card" />
+
+                    <!-- Empty State -->
+                    <LinearLayout
+                        android:id="@+id/layout_empty_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_xlarge"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:src="@drawable/ic_patients_empty"
+                            app:tint="@color/text_hint"
+                            android:layout_marginBottom="@dimen/margin_medium"
+                            android:alpha="0.6" />
+
+                        <TextView
+                            android:id="@+id/text_no_patients"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No patients found.\nTap the + button to add your first patient!"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textColor="@color/text_secondary"
+                            android:gravity="center"
+                            android:lineSpacingExtra="4dp"
+                            tools:text="No patients found for john" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_patient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/margin_medium"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/primary_blue"
+        app:tint="@color/text_white"
+        app:elevation="@dimen/fab_elevation"
+        app:pressedTranslationZ="@dimen/fab_pressed_elevation"
+        android:contentDescription="Add New Patient" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

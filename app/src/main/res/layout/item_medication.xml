@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="@drawable/ripple_effect"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="@dimen/card_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_medium">
+
+        <!-- Header Section with Medication Icon and Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/margin_small">
+
+            <!-- Medication Icon -->
+            <ImageView
+                android:id="@+id/image_medication_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_medication"
+                android:background="@drawable/medication_icon_background"
+                android:padding="12dp"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:contentDescription="Medication Icon" />
+
+            <!-- Medication Name and Status -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- Medication Name -->
+                <TextView
+                    android:id="@+id/text_medication_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metformin"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="Metformin HCl" />
+
+                <!-- Generic Name -->
+                <TextView
+                    android:id="@+id/text_generic_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Glucophage"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_marginTop="2dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    tools:text="(Glucophage)" />
+
+            </LinearLayout>
+
+            <!-- Active Status Indicator -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <View
+                    android:id="@+id/status_indicator"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/medication_active_status"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/text_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active"
+                    android:textColor="@color/success_green"
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold"
+                    tools:text="Active" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Dosage and Frequency Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/margin_small">
+
+            <!-- Dosage -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_dosage"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:contentDescription="Dosage" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dosage"
+                        android:textColor="@color/text_hint"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/text_dosage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="500mg"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        tools:text="500mg" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Frequency -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_schedule"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:contentDescription="Frequency" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Frequency"
+                        android:textColor="@color/text_hint"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/text_frequency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Twice daily"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold"
+                        tools:text="Twice daily" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Doctor and Start Date Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/margin_small">
+
+            <!-- Prescribed By -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_doctor"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:contentDescription="Doctor" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prescribed By"
+                        android:textColor="@color/text_hint"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/text_prescribed_by"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Smith"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_medium"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        tools:text="Dr. Smith" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Start Date -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_calendar"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:contentDescription="Start Date" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Started"
+                        android:textColor="@color/text_hint"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/text_start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jul 15, 2025"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="Jul 15, 2025" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Instructions Section -->
+        <LinearLayout
+            android:id="@+id/layout_instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/instructions_background"
+            android:padding="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💡 Instructions"
+                android:textColor="@color/info_blue"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <TextView
+                android:id="@+id/text_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Take with meals to reduce stomach upset. Monitor blood sugar levels regularly."
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_medium"
+                android:lineSpacingMultiplier="1.2"
+                tools:text="Take with meals to reduce stomach upset. Monitor blood sugar levels regularly." />
+
+        </LinearLayout>
+
+        <!-- Warning Section for Side Effects -->
+        <LinearLayout
+            android:id="@+id/layout_side_effects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/warning_background"
+            android:padding="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚠️ Side Effects"
+                android:textColor="@color/warning_orange"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <TextView
+                android:id="@+id/text_side_effects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nausea, stomach upset, metallic taste"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_medium"
+                android:lineSpacingMultiplier="1.2"
+                tools:text="Nausea, stomach upset, metallic taste" />
+
+        </LinearLayout>
+
+        <!-- Bottom Action Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Refills Info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_refill"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:contentDescription="Refills" />
+
+                <TextView
+                    android:id="@+id/text_refills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 refills left"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_small"
+                    tools:text="3 refills left" />
+
+            </LinearLayout>
+
+            <!-- End Date (if applicable) -->
+            <LinearLayout
+                android:id="@+id/layout_end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_end_date"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:contentDescription="End Date" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ends:"
+                    android:textColor="@color/text_hint"
+                    android:textSize="@dimen/text_size_small"
+                    android:layout_marginEnd="4dp" />
+
+                <TextView
+                    android:id="@+id/text_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dec 15, 2025"
+                    android:textColor="@color/warning_orange"
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold"
+                    tools:text="Dec 15, 2025" />
+
+            </LinearLayout>
+
+            <!-- More Options Button -->
+            <ImageButton
+                android:id="@+id/button_more_options"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_more_vert"
+                android:background="@drawable/ripple_effect"
+                android:layout_marginStart="@dimen/margin_small"
+                android:contentDescription="More Options" />
+
+        </LinearLayout>
+
+        <!-- Pharmacy Info (Expandable) -->
+        <LinearLayout
+            android:id="@+id/layout_pharmacy_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin_small"
+            android:padding="@dimen/margin_small"
+            android:background="@drawable/pharmacy_background"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_pharmacy"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:contentDescription="Pharmacy" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pharmacy"
+                    android:textColor="@color/text_hint"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/text_pharmacy_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CVS Pharmacy #1234"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_medium"
+                    tools:text="CVS Pharmacy #1234" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/button_call_pharmacy"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_phone"
+                android:background="@drawable/call_pharmacy_background"
+                android:tint="@color/text_white"
+                android:contentDescription="Call Pharmacy" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

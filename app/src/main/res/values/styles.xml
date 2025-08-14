@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base Application Theme -->
+    <style name="Theme.PatientRecords" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryVariant">@color/primary_blue_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/secondary_teal</item>
+        <item name="colorSecondaryVariant">@color/secondary_teal_dark</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/primary_blue_dark</item>
+        <item name="android:navigationBarColor">@color/primary_blue</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_main</item>
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+
+        <!-- Error colors -->
+        <item name="colorError">@color/danger_red</item>
+        <item name="colorOnError">@color/text_white</item>
+
+        <!-- Control colors -->
+        <item name="colorControlActivated">@color/primary_blue</item>
+        <item name="colorControlHighlight">@color/primary_blue_light</item>
+        <item name="colorControlNormal">@color/text_secondary</item>
+
+        <!-- Window properties -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+    </style>
+
+    <!-- Alternative Theme Name (PatientRecordsApp) -->
+    <style name="Theme.PatientRecordsApp" parent="Theme.PatientRecords">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryVariant">@color/primary_blue_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/secondary_teal</item>
+        <item name="colorSecondaryVariant">@color/secondary_teal_dark</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/primary_blue_dark</item>
+        <item name="android:navigationBarColor">@color/primary_blue</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_main</item>
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+
+        <!-- Error colors -->
+        <item name="colorError">@color/danger_red</item>
+        <item name="colorOnError">@color/text_white</item>
+
+        <!-- Control colors -->
+        <item name="colorControlActivated">@color/primary_blue</item>
+        <item name="colorControlHighlight">@color/primary_blue_light</item>
+        <item name="colorControlNormal">@color/text_secondary</item>
+
+        <!-- Window properties -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+    </style>
+
+    <!-- Alternative Theme with ActionBar -->
+    <style name="Theme.PatientRecords.WithActionBar" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryVariant">@color/primary_blue_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+        <item name="colorSecondary">@color/secondary_teal</item>
+        <item name="android:statusBarColor">@color/primary_blue_dark</item>
+        <item name="android:colorBackground">@color/background_main</item>
+    </style>
+
+    <!-- Toolbar Styles -->
+    <style name="HealthcareToolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/primary_blue</item>
+        <item name="titleTextColor">@color/text_white</item>
+        <item name="subtitleTextColor">@color/text_white</item>
+        <item name="android:theme">@style/HealthcareToolbarTheme</item>
+        <item name="popupTheme">@style/ThemeOverlay.Material3.Light</item>
+    </style>
+
+    <style name="HealthcareToolbarTheme" parent="ThemeOverlay.Material3.Dark.ActionBar">
+        <item name="colorControlNormal">@color/text_white</item>
+        <item name="colorControlActivated">@color/text_white</item>
+        <item name="colorControlHighlight">@color/primary_blue_light</item>
+    </style>
+
+    <!-- Card Styles -->
+    <style name="HealthcareCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/card_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="contentPadding">@dimen/margin_medium</item>
+        <item name="rippleColor">@color/ripple_primary</item>
+    </style>
+
+    <style name="HealthcareCard.Flat" parent="HealthcareCard">
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/border_light</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="HealthcareCard.Dashboard" parent="HealthcareCard">
+        <item name="cardElevation">@dimen/card_elevation_small</item>
+        <item name="android:layout_height">@dimen/dashboard_card_height</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Button Styles -->
+    <style name="HealthcareButton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary_blue</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="cornerRadius">@dimen/button_radius</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="rippleColor">@color/primary_blue_light</item>
+    </style>
+
+    <style name="HealthcareButton.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/primary_blue</item>
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="cornerRadius">@dimen/button_radius</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="rippleColor">@color/primary_blue_light</item>
+    </style>
+
+    <style name="HealthcareButton.Success" parent="HealthcareButton">
+        <item name="backgroundTint">@color/success_green</item>
+    </style>
+
+    <style name="HealthcareButton.Warning" parent="HealthcareButton">
+        <item name="backgroundTint">@color/warning_orange</item>
+    </style>
+
+    <style name="HealthcareButton.Danger" parent="HealthcareButton">
+        <item name="backgroundTint">@color/danger_red</item>
+    </style>
+
+    <!-- Text Input Styles -->
+    <style name="HealthcareTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary_blue</item>
+        <item name="boxStrokeErrorColor">@color/danger_red</item>
+        <item name="hintTextColor">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="errorTextColor">@color/danger_red</item>
+        <item name="counterTextColor">@color/text_secondary</item>
+        <item name="counterOverflowTextColor">@color/danger_red</item>
+        <item name="endIconTint">@color/primary_blue</item>
+        <item name="startIconTint">@color/primary_blue</item>
+    </style>
+
+    <style name="HealthcareTextInputEditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="HealthcareText">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="HealthcareText.Headline" parent="HealthcareText">
+        <item name="android:textSize">@dimen/text_size_header</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="HealthcareText.Title" parent="HealthcareText">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="HealthcareText.Subtitle" parent="HealthcareText">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="HealthcareText.Body" parent="HealthcareText">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="HealthcareText.Caption" parent="HealthcareText">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="HealthcareText.Label" parent="HealthcareText">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Chip Styles -->
+    <style name="HealthcareChip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/primary_blue_light</item>
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="checkedIconTint">@color/primary_blue</item>
+        <item name="rippleColor">@color/primary_blue_light</item>
+    </style>
+
+    <style name="HealthcareChip.Medical" parent="HealthcareChip">
+        <item name="chipBackgroundColor">@color/success_green_light</item>
+        <item name="android:textColor">@color/success_green_dark</item>
+    </style>
+
+    <style name="HealthcareChip.Alert" parent="HealthcareChip">
+        <item name="chipBackgroundColor">@color/warning_orange_light</item>
+        <item name="android:textColor">@color/warning_orange_dark</item>
+    </style>
+
+    <style name="HealthcareChip.Emergency" parent="HealthcareChip">
+        <item name="chipBackgroundColor">@color/danger_red_light</item>
+        <item name="android:textColor">@color/danger_red_dark</item>
+    </style>
+
+    <!-- FloatingActionButton Styles -->
+    <style name="HealthcareFAB" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/primary_blue</item>
+        <item name="tint">@color/text_white</item>
+        <item name="rippleColor">@color/primary_blue_light</item>
+        <item name="elevation">@dimen/card_elevation</item>
+        <item name="pressedTranslationZ">@dimen/elevation_pressed</item>
+    </style>
+
+    <!-- Navigation Styles -->
+    <style name="HealthcareNavigationView" parent="Widget.Material3.NavigationView">
+        <item name="itemIconTint">@color/primary_blue</item>
+        <item name="itemTextColor">@color/text_primary</item>
+        <item name="itemBackground">@drawable/nav_item_background</item>
+        <item name="android:background">@color/card_background</item>
+    </style>
+
+    <!-- Bottom Navigation -->
+    <style name="HealthcareBottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/primary_blue</item>
+        <item name="itemTextColor">@color/primary_blue</item>
+        <item name="android:background">@color/card_background</item>
+        <item name="elevation">@dimen/card_elevation</item>
+    </style>
+
+    <!-- TabLayout Styles -->
+    <style name="HealthcareTabLayout" parent="Widget.Material3.TabLayout">
+        <item name="tabIndicatorColor">@color/primary_blue</item>
+        <item name="tabSelectedTextColor">@color/primary_blue</item>
+        <item name="tabTextColor">@color/text_secondary</item>
+        <item name="android:background">@color/card_background</item>
+        <item name="tabRippleColor">@color/primary_blue_light</item>
+    </style>
+
+    <!-- Progress Bar Styles -->
+    <style name="HealthcareProgressBar" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="indicatorColor">@color/primary_blue</item>
+        <item name="trackColor">@color/primary_blue_light</item>
+    </style>
+
+    <!-- Switch Styles -->
+    <style name="HealthcareSwitch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="thumbTint">@color/primary_blue</item>
+        <item name="trackTint">@color/primary_blue_light</item>
+    </style>
+
+    <!-- Checkbox Styles -->
+    <style name="HealthcareCheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="buttonTint">@color/primary_blue</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- RadioButton Styles -->
+    <style name="HealthcareRadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="buttonTint">@color/primary_blue</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- SearchView Styles -->
+    <style name="HealthcareSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="submitBackground">@android:color/transparent</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="closeIcon">@drawable/ic_close</item>
+    </style>
+
+    <!-- Spinner Styles -->
+    <style name="HealthcareSpinner" parent="Widget.Material3.MaterialTimePicker.Display">
+        <item name="android:background">@color/card_background</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- Dialog Styles -->
+    <style name="HealthcareDialog" parent="ThemeOverlay.Material3.Dialog">
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+    </style>
+
+    <!-- Alert Dialog -->
+    <style name="HealthcareAlertDialog" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="buttonBarPositiveButtonStyle">@style/HealthcareButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/HealthcareButton.Secondary</item>
+    </style>
+
+    <!-- Snackbar Styles -->
+    <style name="HealthcareSnackbar" parent="Widget.Material3.Snackbar">
+        <item name="android:background">@color/text_primary</item>
+        <item name="actionTextColorAlpha">1.0</item>
+    </style>
+
+    <!-- Bottom Sheet Styles -->
+    <style name="HealthcareBottomSheet" parent="Widget.Material3.BottomSheet">
+        <item name="backgroundTint">@color/card_background</item>
+        <item name="shapeAppearance">@style/HealthcareBottomSheetShape</item>
+    </style>
+
+    <style name="HealthcareBottomSheetShape" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/card_radius</item>
+        <item name="cornerSizeTopRight">@dimen/card_radius</item>
+    </style>
+
+    <!-- Medical Specific Styles -->
+    <style name="MedicalConditionChip" parent="HealthcareChip.Medical">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="chipMinHeight">@dimen/medical_chip_height</item>
+    </style>
+
+    <style name="VitalSignsText" parent="HealthcareText.Body">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_blue</item>
+    </style>
+
+    <style name="EmergencyText" parent="HealthcareText.Body">
+        <item name="android:textColor">@color/danger_red</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Patient Card Styles -->
+    <style name="PatientCardTitle" parent="HealthcareText.Title">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="PatientCardSubtitle" parent="HealthcareText.Caption">
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Age Badge Style -->
+    <style name="AgeBadge" parent="HealthcareText.Caption">
+        <item name="android:background">@drawable/age_badge</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">32dp</item>
+        <item name="android:minHeight">20dp</item>
+    </style>
+
+    <!-- Simplified Splash Screen Theme (without custom splash screen API) -->
+    <style name="Theme.PatientRecords.Splash" parent="Theme.PatientRecords">
+        <item name="android:windowBackground">@color/primary_blue</item>
+        <item name="android:statusBarColor">@color/primary_blue</item>
+        <item name="android:navigationBarColor">@color/primary_blue</item>
+    </style>
+
+</resources>
